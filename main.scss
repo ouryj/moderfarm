@@ -1,0 +1,58 @@
+$mycolol: green;
+$myText:center;
+$myFont-size: 2.5em;
+
+$sections-height: 500px;
+@mixin images-size($pixel) {
+    height: $pixel;
+    width: $pixel;
+    
+}
+.section1,.section2,.section3,header {
+    opacity: 0;
+}
+
+
+section {
+    height: $sections-height;
+}
+%myImage {
+    background-size: cover;
+    background-image: url("tractor2.jpeg");
+}
+.section1 {
+    @extend %myImage;
+    color: $mycolol;
+    
+    
+    h2 {
+        text-align: $myText;
+        padding-top:  200px; 
+    }
+}
+h1 {
+    color: $mycolol;
+    text-align: $myText;
+    font-size: $myFont-size;
+
+}
+.section2  img {
+    @include images-size(250px); 
+}
+// .section2 {
+// opacity: 0;
+// }
+footer {
+    opacity: 0;
+}
+.clear {
+    animation: fadeIn 5s forwards
+}
+@keyframes fadeIn{
+    0%{
+        opacity: 1;
+    }
+    100%{
+        opacity: 1;
+    }
+}
